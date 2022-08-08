@@ -127,6 +127,11 @@ namespace WheelSelect
         private void SaveSelection()
         {
             try {
+                var modKey = ModifierKeys;
+                var isShiftOnly = modKey == Keys.Shift;
+                if (isShiftOnly) {
+
+                }
                 WriteToSaveFile(selected.Text);
             } catch (Exception exn) {
                 MessageBox.Show(String.Format("Could not write to output location:\n[{0}].\n\nSpecifically:\n{1}", settings.OutputLocation, exn.Message)
